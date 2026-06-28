@@ -34,28 +34,9 @@ print("\n" + "=" * 40)
 
 if scores:
     average = sum(scores) / len(scores)
-    passed = sum(1 for s in scores if s >= 40)
-    failed = len(scores) - passed
-
-    if average >= 70:
-        grade = "A"
-    elif average >= 60:
-        grade = "B"
-    elif average >= 50:
-        grade = "C"
-    elif average >= 40:
-        grade = "D"
-    else:
-        grade = "F"
-
     print(f"  Scores entered : {', '.join(str(s) for s in scores)}")
     print(f"  Total scores   : {len(scores)}")
-    print(f"  Highest score  : {max(scores):.2f}")
-    print(f"  Lowest score   : {min(scores):.2f}")
     print(f"  Average score  : {average:.2f}")
-    print(f"  Letter grade   : {grade}")
-    print(f"  Passed (>=40)  : {passed}")
-    print(f"  Failed (<40)   : {failed}")
 else:
     print("  No scores were entered.")
 
