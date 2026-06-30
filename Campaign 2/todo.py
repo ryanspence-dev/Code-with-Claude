@@ -28,34 +28,58 @@ while True:
     print("3) Remove task")
     print("4) Mark task complete")
     print("5) Exit")
-    choice = input("> Choose an option: ")
+    choice = input("> Choose an option: ").strip()
 
     if choice == "1":
-        text = input("Enter task: ")
+        text = input("Enter task: ").strip()
+        if text == "":
+            print("  ! Task cannot be empty.")
+            continue
         tasks.append({"text": text, "done": False})
         save_tasks(tasks)
         print(f"  + Added: {text}")
 
     elif choice == "2":
         print("-" * 40)
+        if not tasks:
+            print("  No tasks yet.")
         for i, task in enumerate(tasks, start=1):
             mark = "x" if task["done"] else " "
             print(f"  {i}. [{mark}] {task['text']}")
         print("-" * 40)
 
     elif choice == "3":
-        index = int(input("Enter task number to remove: "))
+        raw = input("Enter task number to remove: ").strip()
+        try:
+            index = int(raw)
+        except ValueError:
+            print("  ! Please enter a valid number.")
+            continue
+        if index < 1 or index > len(tasks):
+            print("  ! No task with that number.")
+            continue
         removed = tasks.pop(index - 1)
         save_tasks(tasks)
         print(f"  - Removed: {removed['text']}")
 
     elif choice == "4":
-        index = int(input("Enter task number to mark complete: "))
+        raw = input("Enter task number to mark complete: ").strip()
+        try:
+            index = int(raw)
+        except ValueError:
+            print("  ! Please enter a valid number.")
+            continue
+        if index < 1 or index > len(tasks):
+            print("  ! No task with that number.")
+            continue
         tasks[index - 1]["done"] = True
         save_tasks(tasks)
         print(f"  + Marked complete: {tasks[index - 1]['text']}")
 
     elif choice == "5":
         break
+
+    else:
+        print("  ! Invalid option. Please choose 1-5.")
 
 print("\nGoodbye!")
