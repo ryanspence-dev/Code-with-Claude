@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Conservative Party Manifesto | UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="party-hero">
+    <h1>Conservative Party</h1>
+    <p class="party-tagline">Summary of the Conservative Party's 2024 General Election manifesto, "Clear Plan. Bold Action. Secure Future."</p>
+</section>
+
+<section class="manifesto">
+    <div class="accordion-item">
+        <button class="accordion-toggle">Tax &amp; Economy</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Cut employee National Insurance further, with an ambition to abolish it for self-employed workers over time.</li>
+                <li>Introduce a "triple lock plus" so the tax-free pension allowance rises in line with the state pension.</li>
+                <li>Commit to reducing national debt as a share of the economy.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">NHS &amp; Health</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Increase NHS spending above inflation every year.</li>
+                <li>Guarantee a GP appointment within 7 days, or 24 hours if urgent, and recruit 8,000 more full-time-equivalent GPs.</li>
+                <li>Give a named GP to everyone aged over 70 and those with long-term conditions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Immigration &amp; Borders</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Introduce a binding annual cap on migration numbers, reducing them each year.</li>
+                <li>Proceed with the Rwanda scheme to deter small boat crossings.</li>
+                <li>Raise the earnings threshold required for family visas.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">National Service &amp; Defence</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Introduce a form of mandatory National Service for 18-year-olds, offering military or civic/volunteering routes.</li>
+                <li>Increase defence spending to 2.5% of GDP by 2030.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Education</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Replace A-levels and T-levels over time with a new "Advanced British Standard".</li>
+                <li>Continue the rollout of free childcare hours for working parents.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Housing</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Build 1.6 million homes over the next parliament.</li>
+                <li>Continue the Mortgage Guarantee Scheme and introduce a new Help to Buy equity loan scheme for first-time buyers on new-build homes.</li>
+                <li>Abolish stamp duty for first-time buyers on homes up to £425,000.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<p class="manifesto-link">
+    <a href="{{ manifesto_url }}" target="_blank" rel="noopener noreferrer">Read the Conservative Party's full manifesto (opens in a new tab) &rarr;</a>
+</p>
+{% endblock %}

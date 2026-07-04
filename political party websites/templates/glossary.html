@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Political Glossary | UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="glossary-intro">
+    <h1>Political Glossary</h1>
+    <p>Plain-English definitions of words and phrases commonly used in UK politics. Search for a term,
+       or filter by category.</p>
+</section>
+
+<section class="glossary-controls">
+    <input type="search" id="glossary-search" aria-label="Search glossary terms" placeholder="Search terms...">
+    <div class="glossary-categories" role="group" aria-label="Filter by category">
+        <button class="category-filter active" data-category="all" aria-pressed="true">All</button>
+        {% for category in categories %}
+        <button class="category-filter" data-category="{{ category }}" aria-pressed="false">{{ category }}</button>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="glossary-list" id="glossary-list">
+    {% for item in terms %}
+    <article class="glossary-item" data-category="{{ item.category }}" data-term="{{ item.term|lower }}">
+        <h2>{{ item.term }}</h2>
+        <span class="glossary-category-tag">{{ item.category }}</span>
+        <p>{{ item.definition }}</p>
+    </article>
+    {% endfor %}
+</section>
+
+<p id="glossary-empty" class="glossary-empty" hidden>No terms match your search.</p>
+{% endblock %}

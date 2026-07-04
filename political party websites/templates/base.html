@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}UK Political Parties Hub{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        (function () {
+            var stored = localStorage.getItem("theme");
+            var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (stored === "dark" || (!stored && prefersDark)) {
+                document.documentElement.classList.add("dark-mode");
+            }
+        })();
+    </script>
+</head>
+<body class="theme-{{ theme|default('neutral') }}" style="--theme-color: {{ theme_color|default('#333333') }};">
+    <header class="site-header">
+        <a class="site-title" href="{{ url_for('index') }}">UK Political Parties Hub</a>
+        <nav class="site-nav">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('glossary') }}">Glossary</a>
+            <a href="{{ url_for('labour') }}">Labour</a>
+            <a href="{{ url_for('conservatives') }}">Conservatives</a>
+            <a href="{{ url_for('libdems') }}">Lib Dems</a>
+            <a href="{{ url_for('reformuk') }}">Reform UK</a>
+            <a href="{{ url_for('green') }}">Green</a>
+            <a href="{{ url_for('snp') }}">SNP</a>
+            <a href="{{ url_for('plaidcymru') }}">Plaid Cymru</a>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+                <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="site-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>This site is an independent, unbiased reference hub. Manifesto summaries are condensed from
+           each party's official published manifesto and are provided for informational purposes only.
+           Always consult the original manifesto for full detail.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

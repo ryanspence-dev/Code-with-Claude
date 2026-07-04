@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Labour Party Manifesto | UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="party-hero">
+    <h1>Labour Party</h1>
+    <p class="party-tagline">Summary of the Labour Party's 2024 General Election manifesto, "Change".</p>
+</section>
+
+<section class="manifesto">
+    <div class="accordion-item">
+        <button class="accordion-toggle">Economy &amp; Growth</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Make "kickstarting economic growth" the party's first mission in government.</li>
+                <li>Commit to one major fiscal event (Budget) per year to give households and businesses stability.</li>
+                <li>Establish a National Wealth Fund to invest alongside the private sector in industry and infrastructure.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">NHS &amp; Health</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Deliver an extra 40,000 appointments each week, including evenings and weekends.</li>
+                <li>Cut NHS waiting times, meeting the existing 18-week treatment standard within five years.</li>
+                <li>Recruit thousands more NHS staff, partly funded by abolishing the non-domiciled tax status.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Energy &amp; Environment</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Set up Great British Energy, a publicly-owned clean energy company.</li>
+                <li>Aim for "clean power" - zero-carbon electricity generation - by 2030.</li>
+                <li>No new licences for oil and gas exploration in the North Sea (existing licences are unaffected).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Crime &amp; Borders</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Put 13,000 more neighbourhood police officers, PCSOs, and special constables into local communities.</li>
+                <li>Set up a Border Security Command to tackle people-smuggling gangs.</li>
+                <li>Introduce new powers to tackle anti-social behaviour.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Education</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Fund breakfast clubs in every primary school in England.</li>
+                <li>Recruit an additional 6,500 new teachers, funded by ending the VAT exemption for private schools.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Work &amp; Housing</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Introduce a "New Deal for Working People", including day-one rights and a ban on exploitative zero-hours contracts.</li>
+                <li>Build 1.5 million new homes over the next parliament, with planning reform to speed up building.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<p class="manifesto-link">
+    <a href="{{ manifesto_url }}" target="_blank" rel="noopener noreferrer">Read the Labour Party's full manifesto (opens in a new tab) &rarr;</a>
+</p>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Green Party Manifesto | UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="party-hero">
+    <h1>Green Party</h1>
+    <p class="party-tagline">Summary of the Green Party of England and Wales' 2024 General Election manifesto, "Real Hope. Real Change."</p>
+</section>
+
+<section class="manifesto">
+    <div class="accordion-item">
+        <button class="accordion-toggle">Environment &amp; Climate</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Invest an average of £40 billion a year in a green economic transformation, including home insulation and heating upgrades, renewable electricity infrastructure, and transport and water infrastructure.</li>
+                <li>Restore nature through rewilding and expanded protected areas.</li>
+                <li>End new licences for fossil fuel extraction.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Economy &amp; Tax</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Introduce a wealth tax on assets above £10 million.</li>
+                <li>Increase capital gains tax so it matches income tax rates.</li>
+                <li>Equalise National Insurance contributions for higher earners.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">NHS &amp; Health</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Increase NHS dentistry funding to £3 billion a year by 2030, and roll out free dental nursing for children and low-income patients.</li>
+                <li>Introduce free personal care for older and disabled people, modelled on Scotland's existing scheme, backed by £20 billion a year of investment.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Housing</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Build 150,000 new social rent homes a year.</li>
+                <li>Introduce rent controls to cap rises for tenants.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Education</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Scrap undergraduate tuition fees and restore maintenance grants.</li>
+                <li>Invest £5 billion in special educational needs (SEN) provision in mainstream schools.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<p class="manifesto-link">
+    <a href="{{ manifesto_url }}" target="_blank" rel="noopener noreferrer">Read the Green Party's full manifesto (opens in a new tab) &rarr;</a>
+</p>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Liberal Democrats Manifesto | UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="party-hero">
+    <h1>Liberal Democrats</h1>
+    <p class="party-tagline">Summary of the Liberal Democrats' 2024 General Election manifesto, "For A Fair Deal".</p>
+</section>
+
+<section class="manifesto">
+    <div class="accordion-item">
+        <button class="accordion-toggle">Health &amp; Social Care</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Introduce free personal care for people who need help with daily tasks, based on the Scottish model.</li>
+                <li>Guarantee access to a GP appointment within seven days, or 24 hours if urgent.</li>
+                <li>Recruit 8,000 more GPs and guarantee face-to-face appointments for those who want them.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Economy &amp; Europe</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Seek closer trade ties with the EU, starting with a new UK-EU customs union.</li>
+                <li>Abolish business rates and replace them with a Commercial Landowner Levy.</li>
+                <li>Raise the tax-free personal allowance when public finances allow.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Environment</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Set a legally binding target to end sewage discharges into rivers, lakes, and coastal waters.</li>
+                <li>Target at least 90% of UK electricity from renewables by 2030.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Education</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Triple the Early Years Pupil Premium to £1,000 for disadvantaged pupils, and provide extra tutoring support.</li>
+                <li>Invest more in mental health support within schools.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Democracy &amp; Political Reform</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Introduce proportional representation for Westminster elections.</li>
+                <li>Lower the voting age to 16.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<p class="manifesto-link">
+    <a href="{{ manifesto_url }}" target="_blank" rel="noopener noreferrer">Read the Liberal Democrats' full manifesto (opens in a new tab) &rarr;</a>
+</p>
+{% endblock %}

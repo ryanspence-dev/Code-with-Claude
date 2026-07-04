@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Plaid Cymru Manifesto | UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="party-hero">
+    <h1>Plaid Cymru</h1>
+    <p class="party-tagline">Summary of Plaid Cymru's 2024 General Election manifesto, "For Fairness, For Ambition, For Wales".</p>
+</section>
+
+<section class="manifesto">
+    <div class="accordion-item">
+        <button class="accordion-toggle">Welsh Independence</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Campaign for Welsh independence and greater devolution of powers to the Senedd.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Economy &amp; Funding</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Call for reform of the Barnett formula to secure fairer funding for Wales.</li>
+                <li>Secure the £4 billion owed to Wales from HS2 for transport and rail investment.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">NHS &amp; Health</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Establish a National Care Service for Wales, delivering social care free at the point of need.</li>
+                <li>Restore GP funding to 8.7% of the Welsh health budget and recruit 500 additional GPs.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Environment</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Invest in flood defences and green energy jobs across Wales.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Culture &amp; Language</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Support the target of one million Welsh speakers by 2050.</li>
+                <li>Protect and promote Welsh-medium education.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<p class="manifesto-link">
+    <a href="{{ manifesto_url }}" target="_blank" rel="noopener noreferrer">Read Plaid Cymru's full manifesto (opens in a new tab) &rarr;</a>
+</p>
+{% endblock %}

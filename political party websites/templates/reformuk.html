@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Reform UK Manifesto | UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="party-hero">
+    <h1>Reform UK</h1>
+    <p class="party-tagline">Summary of Reform UK's 2024 General Election manifesto, "Our Contract with You".</p>
+</section>
+
+<section class="manifesto">
+    <div class="accordion-item">
+        <button class="accordion-toggle">Immigration &amp; Borders</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Freeze non-essential immigration to ease pressure on housing, health, and infrastructure.</li>
+                <li>Leave the European Convention on Human Rights (ECHR) to allow faster deportation of illegal immigrants.</li>
+                <li>Introduce a strict points-based work visa system, including higher employer National Insurance contributions for foreign workers.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Tax &amp; Economy</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Raise the income tax personal allowance to £20,000.</li>
+                <li>Raise the higher-rate tax threshold to £70,000.</li>
+                <li>Abolish IR35 rules for the self-employed.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">NHS &amp; Health</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Offer tax relief on private healthcare and insurance to reduce pressure on the NHS.</li>
+                <li>Cut management consultancy spending and reduce NHS waste.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Energy &amp; Net Zero</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Scrap the 2050 net zero target.</li>
+                <li>Fast-track new licences for North Sea oil and gas.</li>
+                <li>Scrap net zero subsidies, including for wind, solar, and low-carbon farming schemes.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Education &amp; Culture</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Introduce a "patriotic curriculum" with balanced coverage of topics such as empire and slavery.</li>
+                <li>Ban the teaching of transgender ideology in schools, including social transitioning and pronoun swapping.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Democracy</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Replace the House of Lords with a smaller, democratically elected chamber.</li>
+                <li>Hold a referendum on introducing proportional representation for the House of Commons.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<p class="manifesto-link">
+    <a href="{{ manifesto_url }}" target="_blank" rel="noopener noreferrer">Read Reform UK's full manifesto (opens in a new tab) &rarr;</a>
+</p>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Scottish National Party Manifesto | UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="party-hero">
+    <h1>Scottish National Party (SNP)</h1>
+    <p class="party-tagline">Summary of the SNP's 2024 General Election manifesto, "A Future Made in Scotland".</p>
+</section>
+
+<section class="manifesto">
+    <div class="accordion-item">
+        <button class="accordion-toggle">Independence &amp; Constitution</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Treat a majority of Scottish seats as a mandate to begin independence negotiations with the UK government.</li>
+                <li>Point to the mandate won at the 2021 Holyrood election as the basis for a second independence referendum.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Economy &amp; Cost of Living</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Call for an increase in the UK minimum wage and an end to austerity spending cuts.</li>
+                <li>Call to scrap the two-child benefit cap and the associated "rape clause".</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">NHS &amp; Health</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Back a Bill guaranteeing at least £16 billion a year for NHS England funding, which would generate extra funding for NHS Scotland via the Barnett formula.</li>
+                <li>Invest £300 million to help cut waiting times.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Europe</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Support an independent Scotland re-joining the European Union.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-toggle">Energy &amp; Environment</button>
+        <div class="accordion-panel">
+            <ul>
+                <li>Support a "just transition" for oil and gas workers into renewable energy jobs.</li>
+                <li>Oppose the building of new nuclear power stations in Scotland.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<p class="manifesto-link">
+    <a href="{{ manifesto_url }}" target="_blank" rel="noopener noreferrer">Read the SNP's full manifesto (opens in a new tab) &rarr;</a>
+</p>
+{% endblock %}

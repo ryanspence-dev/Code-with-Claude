@@ -1,0 +1,379 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f7f7f7;
+    --text-color: #1a1a1a;
+    --card-bg: #ffffff;
+    --card-text: #444444;
+    --footer-text: #555555;
+    --border-color: #e0e0e0;
+    --hover-bg: #f0f0f0;
+}
+
+html.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --card-bg: #1e1e1e;
+    --card-text: #cccccc;
+    --footer-text: #aaaaaa;
+    --border-color: #333333;
+    --hover-bg: #2a2a2a;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--text-color);
+    background: var(--bg-color);
+    line-height: 1.5;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--theme-color, #333333);
+    color: #ffffff;
+}
+
+.site-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.site-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 1.25rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.site-nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* SNP yellow fails contrast with white text - use dark text instead,
+   matching how the party itself presents its branding. */
+body.theme-snp .site-header,
+body.theme-snp .site-title,
+body.theme-snp .site-nav a {
+    color: #1a1a1a;
+}
+
+body.theme-snp .theme-toggle {
+    color: #1a1a1a;
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.6);
+}
+
+body.theme-snp .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-left: 1.25rem;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.theme-toggle .icon {
+    width: 1.15rem;
+    height: 1.15rem;
+}
+
+.theme-toggle .icon-moon {
+    display: none;
+}
+
+html.dark-mode .theme-toggle .icon-sun {
+    display: none;
+}
+
+html.dark-mode .theme-toggle .icon-moon {
+    display: block;
+}
+
+.site-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+.site-footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    color: var(--footer-text);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Hub page */
+.intro h1 {
+    margin-bottom: 0.25rem;
+}
+
+.party-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.party-card {
+    display: block;
+    border-radius: 10px;
+    padding: 1.25rem;
+    background: var(--card-bg);
+    border-top: 6px solid var(--card-color, #999999);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+.party-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.party-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.party-card p {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    color: var(--card-text);
+}
+
+.card-cta {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--card-color, #333333);
+}
+
+.party-card--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.party-card--disabled .card-cta {
+    color: #888888;
+}
+
+/* Glossary page */
+.glossary-intro h1 {
+    margin-bottom: 0.25rem;
+}
+
+.glossary-intro p {
+    color: var(--footer-text);
+    margin-top: 0;
+}
+
+.glossary-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.25rem 0 1.5rem;
+}
+
+#glossary-search {
+    flex: 1 1 220px;
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+#glossary-search:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+}
+
+.glossary-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.category-filter {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.category-filter:hover {
+    background: var(--hover-bg);
+}
+
+.category-filter.active {
+    background: #333333;
+    border-color: #333333;
+    color: #ffffff;
+}
+
+html.dark-mode .category-filter.active {
+    background: #f0f0f0;
+    border-color: #f0f0f0;
+    color: #121212;
+}
+
+.glossary-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1rem;
+}
+
+.glossary-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+}
+
+.glossary-item h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+}
+
+.glossary-category-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--footer-text);
+    background: var(--hover-bg);
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    margin-bottom: 0.5rem;
+}
+
+.glossary-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--card-text);
+}
+
+.glossary-empty {
+    color: var(--footer-text);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Party manifesto pages */
+.party-hero h1 {
+    margin-bottom: 0.25rem;
+    color: var(--theme-color, #333333);
+}
+
+.party-tagline {
+    color: var(--footer-text);
+    margin-top: 0;
+}
+
+.manifesto {
+    margin-top: 1.5rem;
+}
+
+.accordion-item {
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--theme-color, #333333);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    background: var(--card-bg);
+    overflow: hidden;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.accordion-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 0.9rem 1.1rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.accordion-toggle:hover {
+    background: var(--hover-bg);
+}
+
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.1rem;
+    transition: max-height 0.2s ease, padding 0.2s ease;
+}
+
+.accordion-item.open .accordion-panel {
+    max-height: 500px;
+    padding: 0 1.1rem 1rem;
+}
+
+.accordion-panel ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.accordion-panel li {
+    margin-bottom: 0.4rem;
+}
+
+.manifesto-link {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.manifesto-link a {
+    color: var(--theme-color, #333333);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.manifesto-link a:hover {
+    text-decoration: underline;
+}

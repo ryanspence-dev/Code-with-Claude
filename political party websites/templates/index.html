@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}UK Political Parties Hub{% endblock %}
+
+{% block content %}
+<section class="intro">
+    <h1>UK Political Parties</h1>
+    <p>An unbiased reference point for the major political parties in the UK. Pick a party below
+       to read a neutral summary of their most recent general election manifesto.</p>
+</section>
+
+<section class="party-grid">
+    {% for party in parties %}
+        {% if party.endpoint %}
+            <a class="party-card" href="{{ url_for(party.endpoint) }}" style="--card-color: {{ party.color }};">
+                <h2>{{ party.name }}</h2>
+                <p>{{ party.summary }}</p>
+                <span class="card-cta">View manifesto &rarr;</span>
+            </a>
+        {% else %}
+            <div class="party-card party-card--disabled" style="--card-color: {{ party.color }};">
+                <h2>{{ party.name }}</h2>
+                <p>{{ party.summary }}</p>
+                <span class="card-cta">Coming soon</span>
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>
+{% endblock %}
