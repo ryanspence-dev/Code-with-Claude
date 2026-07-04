@@ -22,6 +22,15 @@ Templates live in `templates/` (Jinja2, extending `base.html`), styling in `stat
 
 Manifesto content must be fact-checked against each party's actual official manifesto (not just recalled from memory) before publishing, and each party page links to its official manifesto source at the bottom.
 
+## What "unbiased" means on this site
+
+This site's whole value is being a neutral reference, so content must stay neutral:
+
+- Describe each party's own stated positions - don't editorialize, praise, or criticize them.
+- Use neutral, dictionary-style language, even for loaded terms (e.g. "populism," "nationalism") - define what the term means, don't frame it positively or negatively.
+- Never rank, rate, or comparatively judge parties against each other (no "better/worse," "more extreme," "more sensible," etc.). Each party gets its own page/summary on its own terms.
+- Keep every party's page to a comparable level of depth and quality - don't give one party's page more detail, more sections, or more favorable framing than another's.
+
 ## Rules
 
 - Commit after completing a coherent unit of work (feature, fix, or refactor). Each commit should represent a stable, working state with a clear message describing the change.
