@@ -16,13 +16,13 @@ This is a learning/practice repository tracking the iterative development of a C
 
 | File | Description |
 |------|-------------|
-| `score_calculator_v1.py` | Baseline: collects scores, computes average, no error handling |
-| `score_calculator_v2.py` | Adds `try/except` for invalid input |
-| `score_calculator FINAL.py` | Adds `.strip()` for whitespace tolerance |
-| `score_calculator_v4.py` | Adds range validation (0–100), empty-input guard, live feedback per entry |
+| `old_versions/score_calculator_v1.py` | Baseline: collects scores, computes average, no error handling |
+| `old_versions/score_calculator_v2.py` | Adds `try/except` for invalid input |
+| `old_versions/score_calculator FINAL.py` | Adds `.strip()` for whitespace tolerance |
+| `old_versions/score_calculator_v4.py` | Adds range validation (0–100), empty-input guard, live feedback per entry |
 | `score_calculator.py` | Current canonical version: includes all of the above plus min/max, pass/fail count, and letter grade (A/B/C/D/F based on average, pass threshold ≥ 40) |
 
-`README.md` and `README.txt` (identical content) document this version history.
+Earlier draft versions were archived into `old_versions/` for reference; only `score_calculator.py` is the active version. `README.md` documents this version history.
 
 All versions are flat scripts with no functions or modules — logic runs at the top level in a `while True` input loop followed by a results block.
 
