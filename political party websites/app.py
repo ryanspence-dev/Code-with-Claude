@@ -144,6 +144,132 @@ GLOSSARY_CATEGORIES = [
     "Devolution & Constitution",
 ]
 
+# Specific laws, schemes, or named policies referenced inside manifesto bullets that a
+# general reader may not recognise. Unlike GLOSSARY_TERMS (general political vocabulary,
+# shown on its own /glossary page), these are looked up inline on party pages via the
+# ref() macro in templates/_macros.html and shown in a popup. Keyed by slug so the same
+# concept (e.g. the Barnett formula) can be reused across multiple party pages without
+# duplicating the explanation.
+REFERENCE_TERMS = {
+    "two-child-cap": {
+        "title": "Two-child benefit cap",
+        "body": "A rule that applied from April 2017 to April 2026, limiting means-tested "
+                "benefits such as Universal Credit and Child Tax Credit to a family's first "
+                "two children, with some exceptions. It was abolished from 6 April 2026.",
+    },
+    "rape-clause": {
+        "title": "'Rape clause'",
+        "body": "The common name for the 'non-consensual conception' exception to the "
+                "two-child limit: while that limit applied (2017-2026), it let a parent claim "
+                "support for a third or later child conceived through rape or coercive "
+                "control, subject to third-party evidence.",
+    },
+    "barnett-formula": {
+        "title": "Barnett formula",
+        "body": "A formula used by the UK Treasury to adjust the funding of the Scottish "
+                "Government, Welsh Government, and Northern Ireland Executive whenever "
+                "spending changes for comparable UK government departments in England, in "
+                "proportion to each nation's population.",
+    },
+    "just-transition": {
+        "title": "'Just transition'",
+        "body": "A principle that the shift away from fossil fuels should protect the pay, "
+                "skills, and job prospects of workers currently employed in affected "
+                "industries, such as oil and gas, for example through retraining or support "
+                "finding new roles.",
+    },
+    "non-dom-status": {
+        "title": "Non-domiciled ('non-dom') tax status",
+        "body": "A tax status, abolished from April 2025, that had let UK residents whose "
+                "permanent home was considered to be outside the UK avoid UK tax on foreign "
+                "income and gains not brought into the UK. It was replaced by a "
+                "residence-based regime, with transitional reliefs for some new arrivals.",
+    },
+    "border-security-command": {
+        "title": "Border Security Command",
+        "body": "A law enforcement unit, established in July 2024, that brings together "
+                "Border Force, the National Crime Agency, immigration enforcement, and "
+                "intelligence agencies to target people-smuggling gangs behind small boat "
+                "crossings.",
+    },
+    "new-deal-working-people": {
+        "title": "'New Deal for Working People'",
+        "body": "Labour's package of employment law reforms, mostly enacted as the "
+                "Employment Rights Act 2025. It introduces day-one rights such as parental "
+                "leave and sick pay and restricts 'exploitative' zero-hours contracts, though "
+                "unfair-dismissal protection applies after six months rather than from day "
+                "one as originally pledged.",
+    },
+    "rwanda-scheme": {
+        "title": "Rwanda scheme",
+        "body": "A UK government policy, agreed with Rwanda in 2022, to relocate some people "
+                "arriving in the UK without permission (e.g. by small boat) to Rwanda for "
+                "asylum processing. It was cancelled by the incoming Labour government in "
+                "July 2024, and the underlying treaty was formally terminated in March 2026; "
+                "no one was ever compulsorily relocated under it.",
+    },
+    "triple-lock-plus": {
+        "title": "'Triple lock plus'",
+        "body": "A Conservative Party pledge at the 2024 general election to apply the state "
+                "pension 'triple lock' (increasing by the highest of inflation, average "
+                "earnings growth, or 2.5%) to pensioners' tax-free personal allowance too. It "
+                "was not implemented after the Conservatives lost the election.",
+    },
+    "advanced-british-standard": {
+        "title": "'Advanced British Standard'",
+        "body": "A Conservative Party proposal, announced in 2023, for a single "
+                "qualification intended to eventually replace both A-levels and T-levels for "
+                "16-18 year-olds in England. It was cancelled by the incoming Labour "
+                "government in July 2024 and never introduced.",
+    },
+    "mortgage-guarantee-scheme": {
+        "title": "Mortgage Guarantee Scheme",
+        "body": "A UK government scheme, running since 2021 and made permanent from July "
+                "2025, in which the government guarantees part of a mortgage to encourage "
+                "lenders to offer 91-95% loan-to-value mortgages to buyers with small "
+                "deposits.",
+    },
+    "help-to-buy-scheme": {
+        "title": "Help to Buy equity loan scheme",
+        "body": "A UK government scheme, open 2013-2023, that offered first-time buyers of "
+                "new-build homes a loan for part of the purchase price on top of their "
+                "mortgage and deposit. The Conservatives' 2024 manifesto proposed reviving a "
+                "new version, but this was not implemented after they lost the election.",
+    },
+    "commercial-landowner-levy": {
+        "title": "Commercial Landowner Levy",
+        "body": "A Liberal Democrat proposal, first put forward in 2018, for a tax on the "
+                "land value of commercial sites to replace business rates (the current "
+                "property-based tax on business premises). It has not been adopted as "
+                "government policy.",
+    },
+    "early-years-pupil-premium": {
+        "title": "Early Years Pupil Premium",
+        "body": "Ongoing additional funding paid to early years childcare and education "
+                "providers in England for each eligible disadvantaged three- or four-year-old "
+                "receiving free early education, based on criteria such as family income or "
+                "care/adoption history.",
+    },
+    "echr": {
+        "title": "European Convention on Human Rights (ECHR)",
+        "body": "An international treaty, overseen by the Council of Europe (a body separate "
+                "from and larger than the EU), that protects rights such as a fair trial and "
+                "family life across its member states, including the UK.",
+    },
+    "ir35": {
+        "title": "IR35 rules",
+        "body": "Tax rules (formally 'off-payroll working rules') designed to identify "
+                "contractors who work like employees but bill through their own company, and "
+                "to make them pay broadly the same tax and National Insurance as an employee "
+                "would.",
+    },
+}
+
+
+@app.context_processor
+def inject_reference_terms():
+    return {"reference_terms": REFERENCE_TERMS}
+
 
 @app.route("/")
 def index():

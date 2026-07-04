@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_macros.html" import ref with context %}
 
 {% block title %}Plaid Cymru Manifesto | UK Political Parties Hub{% endblock %}
 
@@ -22,7 +23,7 @@
         <button class="accordion-toggle">Economy &amp; Funding</button>
         <div class="accordion-panel">
             <ul>
-                <li>Call for reform of the Barnett formula to secure fairer funding for Wales.</li>
+                <li>Call for reform of the {{ ref('barnett-formula', 'Barnett formula') }} to secure fairer funding for Wales.</li>
                 <li>Secure the £4 billion owed to Wales from HS2 for transport and rail investment.</li>
             </ul>
         </div>

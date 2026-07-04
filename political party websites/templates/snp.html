@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_macros.html" import ref with context %}
 
 {% block title %}Scottish National Party Manifesto | UK Political Parties Hub{% endblock %}
 
@@ -24,7 +25,7 @@
         <div class="accordion-panel">
             <ul>
                 <li>Call for an increase in the UK minimum wage and an end to austerity spending cuts.</li>
-                <li>Call to scrap the two-child benefit cap and the associated "rape clause".</li>
+                <li>Call to scrap {{ ref('two-child-cap', 'the two-child benefit cap') }} and the associated {{ ref('rape-clause', '"rape clause"') }}.</li>
             </ul>
         </div>
     </div>
@@ -33,7 +34,7 @@
         <button class="accordion-toggle">NHS &amp; Health</button>
         <div class="accordion-panel">
             <ul>
-                <li>Back a Bill guaranteeing at least £16 billion a year for NHS England funding, which would generate extra funding for NHS Scotland via the Barnett formula.</li>
+                <li>Back a Bill guaranteeing at least £16 billion a year for NHS England funding, which would generate extra funding for NHS Scotland via the {{ ref('barnett-formula', 'Barnett formula') }}.</li>
                 <li>Invest £300 million to help cut waiting times.</li>
             </ul>
         </div>
@@ -52,7 +53,7 @@
         <button class="accordion-toggle">Energy &amp; Environment</button>
         <div class="accordion-panel">
             <ul>
-                <li>Support a "just transition" for oil and gas workers into renewable energy jobs.</li>
+                <li>Support a {{ ref('just-transition', '"just transition"') }} for oil and gas workers into renewable energy jobs.</li>
                 <li>Oppose the building of new nuclear power stations in Scotland.</li>
             </ul>
         </div>

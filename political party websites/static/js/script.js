@@ -73,4 +73,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
         searchInput.addEventListener("input", applyFilters);
     }
+
+    const refModal = document.getElementById("ref-modal");
+    const refButtons = document.querySelectorAll(".ref-term");
+
+    if (refModal && refButtons.length) {
+        const modalTitle = document.getElementById("ref-modal-title");
+        const modalBody = document.getElementById("ref-modal-body");
+        const closeButton = refModal.querySelector(".ref-modal-close");
+        let lastTrigger = null;
+
+        const onRefModalKeydown = (event) => {
+            if (event.key === "Escape") {
+                closeRefModal();
+                return;
+            }
+            if (event.key === "Tab") {
+                const focusable = refModal.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                if (!focusable.length) {
+                    return;
+                }
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+        };
+
+        function openRefModal(trigger) {
+            lastTrigger = trigger;
+            modalTitle.textContent = trigger.dataset.refTitle;
+            modalBody.textContent = trigger.querySelector(".ref-term-body").textContent;
+            refModal.hidden = false;
+            document.body.classList.add("ref-modal-open");
+            closeButton.focus();
+            document.addEventListener("keydown", onRefModalKeydown);
+        }
+
+        function closeRefModal() {
+            refModal.hidden = true;
+            document.body.classList.remove("ref-modal-open");
+            document.removeEventListener("keydown", onRefModalKeydown);
+            if (lastTrigger) {
+                lastTrigger.focus();
+            }
+        }
+
+        refButtons.forEach((button) => {
+            button.addEventListener("click", () => openRefModal(button));
+        });
+
+        refModal.querySelectorAll("[data-ref-close]").forEach((el) => {
+            el.addEventListener("click", closeRefModal);
+        });
+    }
 });

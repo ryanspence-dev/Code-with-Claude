@@ -1,0 +1,1 @@
+{% macro ref(slug, label=None) %}{% set item = reference_terms[slug] %}<button type="button" class="ref-term" data-ref-title="{{ item.title }}" aria-haspopup="dialog">{{ label if label is not none else item.title }}<span class="ref-term-body" hidden>{{ item.body }}</span></button>{% endmacro %}

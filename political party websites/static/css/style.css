@@ -377,3 +377,87 @@ html.dark-mode .category-filter.active {
 .manifesto-link a:hover {
     text-decoration: underline;
 }
+
+/* Inline reference annotations */
+.ref-term {
+    background: none;
+    border: none;
+    padding: 0 0.15em;
+    margin: 0 -0.15em;
+    font: inherit;
+    color: var(--theme-color, #333333);
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.ref-term:hover,
+.ref-term:focus-visible {
+    background: var(--hover-bg);
+}
+
+.ref-term:focus-visible {
+    outline: 2px solid var(--theme-color, #333333);
+    outline-offset: 2px;
+}
+
+.ref-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.ref-modal[hidden] {
+    display: none;
+}
+
+.ref-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.ref-modal-box {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ref-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--hover-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.ref-modal-title {
+    margin: 0 1.5rem 0.5rem 0;
+    color: var(--theme-color, #333333);
+}
+
+.ref-modal-body {
+    margin: 0;
+    color: var(--card-text);
+}
+
+body.ref-modal-open {
+    overflow: hidden;
+}

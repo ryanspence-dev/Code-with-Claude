@@ -57,6 +57,15 @@
            Always consult the original manifesto for full detail.</p>
     </footer>
 
+    <div id="ref-modal" class="ref-modal" hidden>
+        <div class="ref-modal-backdrop" data-ref-close></div>
+        <div class="ref-modal-box" role="dialog" aria-modal="true" aria-labelledby="ref-modal-title">
+            <button type="button" class="ref-modal-close" data-ref-close aria-label="Close">&times;</button>
+            <h2 id="ref-modal-title" class="ref-modal-title"></h2>
+            <p id="ref-modal-body" class="ref-modal-body"></p>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

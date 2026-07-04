@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_macros.html" import ref with context %}
 
 {% block title %}Conservative Party Manifesto | UK Political Parties Hub{% endblock %}
 
@@ -14,7 +15,7 @@
         <div class="accordion-panel">
             <ul>
                 <li>Cut employee National Insurance further, with an ambition to abolish it for self-employed workers over time.</li>
-                <li>Introduce a "triple lock plus" so the tax-free pension allowance rises in line with the state pension.</li>
+                <li>Introduce a {{ ref('triple-lock-plus', '"triple lock plus"') }} so the tax-free pension allowance rises in line with the state pension.</li>
                 <li>Commit to reducing national debt as a share of the economy.</li>
             </ul>
         </div>
@@ -36,7 +37,7 @@
         <div class="accordion-panel">
             <ul>
                 <li>Introduce a binding annual cap on migration numbers, reducing them each year.</li>
-                <li>Proceed with the Rwanda scheme to deter small boat crossings.</li>
+                <li>Proceed with the {{ ref('rwanda-scheme', 'Rwanda scheme') }} to deter small boat crossings.</li>
                 <li>Raise the earnings threshold required for family visas.</li>
             </ul>
         </div>
@@ -56,7 +57,7 @@
         <button class="accordion-toggle">Education</button>
         <div class="accordion-panel">
             <ul>
-                <li>Replace A-levels and T-levels over time with a new "Advanced British Standard".</li>
+                <li>Replace A-levels and T-levels over time with a new {{ ref('advanced-british-standard', '"Advanced British Standard"') }}.</li>
                 <li>Continue the rollout of free childcare hours for working parents.</li>
             </ul>
         </div>
@@ -67,7 +68,7 @@
         <div class="accordion-panel">
             <ul>
                 <li>Build 1.6 million homes over the next parliament.</li>
-                <li>Continue the Mortgage Guarantee Scheme and introduce a new Help to Buy equity loan scheme for first-time buyers on new-build homes.</li>
+                <li>Continue the {{ ref('mortgage-guarantee-scheme', 'Mortgage Guarantee Scheme') }} and introduce a new {{ ref('help-to-buy-scheme', 'Help to Buy equity loan scheme') }} for first-time buyers on new-build homes.</li>
                 <li>Abolish stamp duty for first-time buyers on homes up to £425,000.</li>
             </ul>
         </div>

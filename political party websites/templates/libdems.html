@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_macros.html" import ref with context %}
 
 {% block title %}Liberal Democrats Manifesto | UK Political Parties Hub{% endblock %}
 
@@ -25,7 +26,7 @@
         <div class="accordion-panel">
             <ul>
                 <li>Seek closer trade ties with the EU, starting with a new UK-EU customs union.</li>
-                <li>Abolish business rates and replace them with a Commercial Landowner Levy.</li>
+                <li>Abolish business rates and replace them with a {{ ref('commercial-landowner-levy', 'Commercial Landowner Levy') }}.</li>
                 <li>Raise the tax-free personal allowance when public finances allow.</li>
             </ul>
         </div>
@@ -45,7 +46,7 @@
         <button class="accordion-toggle">Education</button>
         <div class="accordion-panel">
             <ul>
-                <li>Triple the Early Years Pupil Premium to £1,000 for disadvantaged pupils, and provide extra tutoring support.</li>
+                <li>Triple the {{ ref('early-years-pupil-premium', 'Early Years Pupil Premium') }} to £1,000 for disadvantaged pupils, and provide extra tutoring support.</li>
                 <li>Invest more in mental health support within schools.</li>
             </ul>
         </div>
