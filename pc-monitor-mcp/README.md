@@ -43,11 +43,13 @@ interactively. Press Ctrl+C to stop it.
 From anywhere, run:
 
 ```
-claude mcp add pc-monitor -- "C:\Users\ryans\practise\pc-monitor-mcp\venv\Scripts\python.exe" -m pc_monitor_mcp.server
+claude mcp add pc-monitor -e PYTHONPATH="C:\Users\ryans\practise\pc-monitor-mcp\src" -- "C:\Users\ryans\practise\pc-monitor-mcp\venv\Scripts\python.exe" -m pc_monitor_mcp.server
 ```
 
 This registers the server using the venv's own Python interpreter, so it
-always has access to the packages installed in `requirements.txt`.
+always has access to the packages installed in `requirements.txt`. The
+`PYTHONPATH` environment variable is required so that `pc_monitor_mcp` is
+importable regardless of what directory Claude Code launches it from.
 
 Then verify it connected:
 
